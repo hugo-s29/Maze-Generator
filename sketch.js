@@ -1,4 +1,4 @@
-const w = 5
+const w = 25
 const cells = []
 let current
 const prev = []
@@ -10,9 +10,9 @@ const prev = []
 let state = 1
 
 function setup() {
-  createCanvas(800, 800);
-  for (let j = 0; j < width / w; j++) {
-    for (let i = 0; i < height / w; i++) {
+  createCanvas(1000, 1000);
+  for (let j = 0; j < floor(width / w); j++) {
+    for (let i = 0; i < floor(height / w); i++) {
       const cell = new Cell(i, j);
       cells.push(cell);
     }
@@ -37,13 +37,12 @@ function draw() {
     default:
       break
   }
-  if (count >= (width / w) * (height / w)) {
+  if (count >= floor(width / w) * floor(height / w)) {
     noLoop()
     state = 0
     for (const cell of cells) {
       cell.print()
     }
-    print()
   }
 }
 

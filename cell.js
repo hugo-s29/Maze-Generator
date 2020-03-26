@@ -95,10 +95,10 @@ class Cell {
 
 
 function index(i, j) {
-  if (i < 0 || j < 0 || i > width / w - 1 || j > height / w - 1) {
+  if (i < 0 || j < 0 || i >floor(width / w) - 1 || j > floor(height / w) - 1) {
     return -1;
   }
-  return i + j * width / w;
+  return i + j * floor(width / w);
 }
 
 function removeWalls(a, b) {
